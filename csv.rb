@@ -1,9 +1,11 @@
 module TDB
+  class InvalidCSVError < StandardError; end
+
   class CSV
     attr_accessor :values
 
     def initialize(csv_string)
-      # TODO validate csv?
+      validate(csv_string)
       self.values = csv_to_array(csv_string)
     end
 
@@ -17,7 +19,15 @@ module TDB
 
     protected
 
+    def validate(csv_string)
+      # TODO implement
+      # invalid if empty file
+      # invalid if more than one line? assignment instructions ambiguous about this
+      raise InvalidCSVError unless true
+    end
+
     def csv_to_array(csv_string)
+      # TODO handle commas in double-quotes
       csv_string.split(",")
     end
   end
