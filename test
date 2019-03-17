@@ -1,0 +1,30 @@
+#! /usr/bin/env ruby
+
+path_array = File.expand_path(File.dirname(__FILE__)).split("/")
+project_root_path = path_array[0..path_array.length-1].join("/")
+
+$LOAD_PATH.unshift(project_root_path)
+
+require "optparse"
+require "simple_csv"
+
+OUTPUT_FILENAME = "output.csv"
+
+options = {}
+
+OptionParser.new do |parser|
+  parser.banner = "Usage: test -f input.csv"
+
+  parser.on("-f", "--filename [STR]", "File name of CSV to sort") do |f|
+    options["filename"] = f
+  end
+end.parse!
+
+raise OptionParser::MissingArgument if options["filename"].nil?
+
+csv_string = File.open(options["filename"]) {|f| f.readline}
+csv = Tdb::SimpleCSV.new(csv_string)
+csv.sort!
+
+puts "Writing sorted CSV to #{OUTPUT_FILENAME}"
+File.open(OUTPUT_FILENAME, 'w') {|f| f.write(csv.to_s) }

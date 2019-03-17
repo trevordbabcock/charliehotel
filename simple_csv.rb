@@ -1,6 +1,6 @@
 require 'csv'
 
-module TDB
+module Tdb
   class InvalidCSVError < StandardError; end
 
   class SimpleCSV
@@ -30,9 +30,3 @@ module TDB
     end
   end
 end
-
-csv_string = File.open("input.csv") {|f| f.readline}
-csv = TDB::SimpleCSV.new(csv_string)
-csv.sort!
-puts csv.values.inspect
-puts csv.to_s

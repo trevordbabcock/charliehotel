@@ -1,2 +1,2 @@
 dockerimage:
-	docker build -t trevordbabcock/sorter .
+	docker build -t trevordbabcock/csv_sorter .

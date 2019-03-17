@@ -1,4 +1,7 @@
 FROM ruby:2.3.0
 
 COPY ./input.csv /
-COPY ./csv.rb /
+COPY ./simple_csv.rb /
+COPY ./test /
+
+ENTRYPOINT ["/bin/bash"]
