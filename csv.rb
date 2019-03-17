@@ -1,12 +1,14 @@
+require 'csv'
+
 module TDB
   class InvalidCSVError < StandardError; end
 
-  class CSV
+  class SimpleCSV
     attr_accessor :values
 
     def initialize(csv_string)
       validate(csv_string)
-      self.values = csv_to_array(csv_string)
+      self.values = CSV.parse(csv_string)[0]
     end
 
     def sort!
@@ -14,7 +16,8 @@ module TDB
     end
 
     def to_s
-      self.values.join(",")
+      #self.values.join(",")
+      CSV.generate_line(self.values)
     end
 
     protected
@@ -25,17 +28,11 @@ module TDB
       # invalid if more than one line? assignment instructions ambiguous about this
       raise InvalidCSVError unless true
     end
-
-    def csv_to_array(csv_string)
-      # TODO handle commas in double-quotes
-      csv_string.split(",")
-    end
   end
 end
 
-csv_string = "Copenhagen,Stockholm,Oslo"
-
-csv = TDB::CSV.new(csv_string)
+csv_string = File.open("input.csv") {|f| f.readline}
+csv = TDB::SimpleCSV.new(csv_string)
 csv.sort!
-
+puts csv.values.inspect
 puts csv.to_s
