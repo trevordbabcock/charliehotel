@@ -12,7 +12,7 @@ module Tdb
     end
 
     def sort!
-      self.values.sort!
+      self.values.sort!.reverse!
     end
 
     def to_s
