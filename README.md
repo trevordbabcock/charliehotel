@@ -1,5 +1,5 @@
 # charliehotel
-## Answers to Tools and Testing Methodology questions
+## Answers to Gherkin, Tools, and Testing Methodology questions
 ## Gherkin
 - "Given Input CSV file has string alphanumeric characters" - Tests most basic sort functionality. Important if underlying CSV library (ruby's built-in CSV class) changes or is swapped out for a third-party library later.
 - "Given Input CSV file is empty" - Important to specify what is expected in edge cases.
