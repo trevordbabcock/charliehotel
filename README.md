@@ -22,7 +22,7 @@
 - Code redundancy - Assuming you use a remote repository, your code is backed up to a separate machine in case your personal machine fails.
 
 #### Annoying:
-- Merge conflicts can be frustrating; sometimes difficult and/or time-consuming to resolve..
+- Merge conflicts can be frustrating; sometimes difficult and/or time-consuming to resolve.
 - Managing lots of branches can be difficult and confusing. You may end up with a person with the official (or unofficial) title of "Branch Manager."
 - Certain aspects of git are arcane.
 
@@ -37,7 +37,7 @@
 - Easy versioning - The modularity of containers means you can version the entire thing.
 - Logical separation of responsibilities - Containers tend to be small, which encourages adherence to the single responsibility principle. 
 - Deployments can be smaller - If you make a small change to a monolith app, you must deploy the entire monolith app. If you make a small change to one type of container, you only need to deploy that one type of container. 
-- Scalability - If your system is composed of containers and you have designed your containers well, then usually you can achieve very good horizontal scalablility with containers (just add more!). Does not always apply, though. This is *far* preferable to vertical scalability of a monolith app, wher you would need to move the entire app to a more powerful system.
+- Scalability - If your system is composed of containers and you have designed your containers well, then usually you can achieve very good horizontal scalablility with containers (just add more!). Does not always apply, though. This is *far* preferable to vertical scalability of a monolith app, where you would need to move the entire app to a more powerful system.
 - Potential cost savings - Due to ease of scalability, you can not only scale up as demand increases, but you can also scale down as demand decreases, saving infrastructure costs (assuming you're running in the Cloud).
 - Less attachment to individual containers - Monolith apps are like pets: you take care of them so they don't die. Containers are like helpful gut bacteria: you appreciate them, but if one bacteria dies, you don't lose sleep over it and it will surely be replaced (hopefully without having to page you at 3am!).
 
