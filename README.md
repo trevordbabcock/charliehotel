@@ -1,5 +1,15 @@
 # charliehotel
 ## Answers to Tools and Testing Methodology questions
+## Gherkin
+- "Given Input CSV file has string alphanumeric characters" - Tests most basic sort functionality. Important if underlying CSV library (ruby's built-in CSV class) changes or is swapped out for a third-party library later.
+- "Given Input CSV file is empty" - Important to specify what is expected in edge cases.
+- "Given Input CSV file has multiple lines" - Use of CSV in this coding challenge is a bit odd (only first line matters; usually CSVs have multiple lines and represent tabular data, not lists). With that being the case, it is helpful to formally specify the fact that all lines beyond the first line will be ignored/dropped.
+- "Given Input CSV file has values with double-quotes as first and last characters" - Documents what may otherwise be slightly unexpected. values beginning with double-quotes will sort by the double-quote, not the first alpha-numeric. This means double-quoted values will end up sorted to the top.
+- "Given Input CSV file has double-quoted strings containing escaped double-quotes" - Document and test edge case to ensure that underlying CSV library handles double-quote escaping correctly.
+- "Given Input CSV file has double-quoted strings containing commas" - Document and test important edge case, and ensure underlying CSV library handles it correctly.
+- "Given Input CSV file has double-quoted strings containing escaped double-quotes (using backslashes)" - Maybe not super important, but I had an initial misconception about how to properly escape quotes in a CSV, so this test covers that.
+- "Given Input CSV file has single-quotes as first and last characters" - Document expected behavior for single-quotes.
+
 ## Tools
 ### #1
 #### Helpful:
