@@ -1,7 +1,7 @@
 ## Charlie Hotel
-The following are my answers to some questions that are a part of a take-home exercise given to me by a company I am interviewing with. The exercise included some questions about Gherkin, tools in general, and testing methodologies. My answers are in the order the questions appeared in.
-### Gherkin Questions
-Here is my rationale for why I wrote the Gherkin tests that I did. Note: After my conversation with Daniel, I now realize that these tests focus too much on covering edge cases and not enough on capturing core business functionality. With that said, I'll leave them as-is since I was not asked to correct them.
+The following are my answers to some questions that are a part of a take-home exercise given to me by a company I am interviewing with. The exercise included some questions about Gherkin, tooling in general, and testing methodologies. My answers are in the order the questions appeared in.
+### Gherkin Question
+In response to a question about why I wrote the Gherkin tests that I did. Note: After my conversation with Daniel, I now realize that these tests focus too much on covering edge cases and not enough on capturing core business functionality. With that said, I'll leave them as-is since I was not asked to correct them.
 
 In bold, I have the Given from each corresponding test in the Gherkin feature. After the bold, I have a brief explanation of why I included it.
 - "**Given Input CSV file has string alphanumeric characters**" - Tests most basic sort functionality. Important if underlying CSV library (ruby's built-in CSV class) changes or is swapped out for a third-party library later.
